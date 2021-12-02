@@ -7,7 +7,6 @@ init(autoreset=True)
 
 class DayModel(AbstractDay):
 	day = 1
-	path_to_input_file = "./inputs/inputday{}".format(day)
 	input_data = None
 	result_part_1 = None
 	result_part_2 = None
@@ -29,7 +28,7 @@ class DayModel(AbstractDay):
 		self.input_data = value
 
 	def get_input_from_file(self):
-		return file.file_to_array(file_location='./inputs/inputday1', parse_as_int=self.input_is_int)
+		return file.file_to_array(file_location='./inputs/inputday{}'.format(self.day), parse_as_int=self.input_is_int)
 
 	def test(self):
 		self.set_input(self.example_data)
